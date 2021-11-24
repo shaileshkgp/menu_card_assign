@@ -6,3 +6,8 @@ content-type: application/json
     "description" : "Buy apples and mangoes",
     "status" : "pending"
 }
+
+
+###
+GET http://localhost:8080/getAll HTTP/1.1
+content-type: application/json

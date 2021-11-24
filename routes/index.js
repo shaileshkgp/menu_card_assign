@@ -1,15 +1,8 @@
 import { Router } from "express";
 import Todo from "../models/Todo.js";
-import {
-  createTodo,
-  deleteTodo,
-  getAllTodo,
-  updateTodo,
-} from "../controllers/index.js";
 
 const router = Router();
 
-// router.post("/create", createTodo);
 router.post("/create", async (req, res) => {
   try {
     console.log(req.body);
@@ -22,7 +15,6 @@ router.post("/create", async (req, res) => {
   }
 });
 
-// router.get("/getAll", getAllTodo);
 router.get("/getAll", async (req, res) => {
   try {
     const tasks = await Todo.find().lean();
@@ -33,7 +25,6 @@ router.get("/getAll", async (req, res) => {
   }
 });
 
-// router.put("/edit/:id", updateTodo);
 router.put("/edit/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -45,7 +36,6 @@ router.put("/edit/:id", async (req, res) => {
   }
 });
 
-// router.delete("/delete/:id", deleteTodo);
 router.delete("/delete/:id", async (req, res, next) => {
   try {
     let { id } = req.params;
