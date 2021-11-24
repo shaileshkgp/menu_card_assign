@@ -36,7 +36,8 @@ router.get("/getAll", async (req, res) => {
 // router.put("/edit/:id", updateTodo);
 router.put("/edit/:id", async (req, res) => {
   try {
-    const tasks = await Todo.find().lean();
+    const { id } = req.params;
+    const tasks = await Todo.findByIdAndUpdate(id, req.body);
     res.status(201).send({ all_data: tasks });
   } catch (error) {
     console.log({ error });

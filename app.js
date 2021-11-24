@@ -20,6 +20,7 @@ app.use(
     extended: true,
   })
 );
+app.use(bodyParser.json());
 
 app.use(express.urlencoded({ extended: false }));
 
