@@ -1,0 +1,8 @@
+POST http://localhost:8080/create HTTP/1.1
+content-type: application/json
+
+{
+    "title" : "Goto Market",
+    "description" : "Buy apples and mangoes",
+    "status" : "pending"
+}
